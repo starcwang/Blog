@@ -4,5 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
+    <import resource="spring-properties.xml"/>
+    <import resource="spring-scan.xml"/>
+    <import resource="spring-datasource.xml"/>
+    <import resource="spring-mybatis.xml"/>
 
 </beans>
