@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
-
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-08 17:46:00
