@@ -23,52 +23,7 @@
 <div id="wrapper">
 
     <!-- Content -->
-    <div id="content" class="mobileUI-main-content">
-        <div id="content-inner">
-            #if($articleContentsList && $articleContentsList.size() > 0)
-                #foreach($item in $articleContentsList)
-                    <!-- Post -->
-                    <article class="is-post is-post-excerpt">
-                        <header>
-                            <h2><a href="#">$item.title</a></h2>
-                            <span class="byline">$item.summary</span>
-                        </header>
-                        <div class="info">
-                            <span class="date">
-                                <span class="month">$dateTool.format('MMM',$item.updateTime)</span>
-                                <span class="day">$dateTool.format('dd',$item.updateTime)</span>
-                                <span class="year">, $dateTool.format('yyyy',$item.updateTime)</span>
-                            </span>
-                            <ul class="stats">
-                                <li><a href="#" class="link-icon24 link-icon24-1">$item.commentNum</a></li>
-                                <li><a href="#" class="link-icon24 link-icon24-2">$item.likeNum</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="image image-full"><img src="../../resources/images/n33-robot-invader.jpg"
-                                                                  alt=""/></a>
-                        <p>
-                            $item.content
-                        </p>
-                    </article>
-                #end
-            #end
 
-            <!-- Pager -->
-            <div class="pager">
-                <!--<a href="#" class="button previous">Previous Page</a>-->
-                <div class="pages">
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <span>&hellip;</span>
-                    <a href="#">20</a>
-                </div>
-                <a href="#" class="button next">Next Page</a>
-            </div>
-
-        </div>
-    </div>
 
     <!-- Sidebar -->
     <div id="sidebar">
@@ -82,8 +37,8 @@
         <nav id="nav" class="mobileUI-site-nav">
             <ul>
                 <li><a href="/index.html">最近</a></li>
-                <li class="current_page_item"><a href="/article/contents">文章</a></li>
-                <li><a href="/gallery/list">相册</a></li>
+                <li><a href="/article/contents">文章</a></li>
+                <li class="current_page_item"><a href="/gallery/list">相册</a></li>
                 <li><a href="/about/info">关于</a></li>
                 <li><a href="/contact/our">联系</a></li>
             </ul>
