@@ -1,4 +1,4 @@
-package com.star.blog.dao;
+package com.staryn.blog.dao;
 
 import javax.annotation.Resource;
 

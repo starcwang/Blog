@@ -1,4 +1,4 @@
-package com.star.blog.service.impl;
+package com.staryn.blog.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import javax.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import com.star.blog.dao.ArticleDao;
-import com.star.blog.model.ArticleContents;
-import com.star.blog.model.pojo.ArticleModel;
-import com.star.blog.service.ArticleService;
+import com.staryn.blog.dao.ArticleDao;
+import com.staryn.blog.model.ArticleContents;
+import com.staryn.blog.model.pojo.ArticleModel;
+import com.staryn.blog.service.ArticleService;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>

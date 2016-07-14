@@ -1,4 +1,4 @@
-package com.star.blog.controller;
+package com.staryn.blog.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

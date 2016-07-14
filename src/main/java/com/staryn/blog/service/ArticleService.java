@@ -1,8 +1,8 @@
-package com.star.blog.service;
+package com.staryn.blog.service;
 
 import java.util.List;
 
-import com.star.blog.model.ArticleContents;
+import com.staryn.blog.model.ArticleContents;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>

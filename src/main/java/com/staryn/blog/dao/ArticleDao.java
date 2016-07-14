@@ -1,10 +1,10 @@
-package com.star.blog.dao;
+package com.staryn.blog.dao;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.star.blog.model.pojo.ArticleModel;
+import com.staryn.blog.model.pojo.ArticleModel;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>

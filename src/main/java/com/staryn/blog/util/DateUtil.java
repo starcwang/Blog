@@ -1,4 +1,4 @@
-package com.star.blog.util;
+package com.staryn.blog.util;
 
 import java.util.Date;
 
