@@ -22,7 +22,7 @@ public class LogFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
-        HttpServletRequest httpReq = (HttpServletRequest)servletRequest;
+        HttpServletRequest httpReq = (HttpServletRequest) servletRequest;
         initLog(httpReq);
         filterChain.doFilter(servletRequest, servletResponse);
     }
@@ -33,6 +33,10 @@ public class LogFilter extends GenericFilterBean {
         if (StringUtils.isBlank(traceId)) {
             traceId = UUID.randomUUID().toString();
         }
-        LogManager.setTraceId(traceId);
+        String ip = httpReq.getHeader("X-Forwarded-For");
+        if (StringUtils.isBlank(ip)) {
+            ip = httpReq.getRemoteAddr();
+        }
+        LogManager.setTraceId(traceId, httpReq.getRequestURI(), ip);
     }
 }

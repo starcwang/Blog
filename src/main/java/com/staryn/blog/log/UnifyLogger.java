@@ -25,6 +25,10 @@ public abstract class UnifyLogger {
         msgSb.append(FIELD_SEPARATOR);
         msgSb.append(genLogId(logId));
         msgSb.append(FIELD_SEPARATOR);
+        msgSb.append(genURI());
+        msgSb.append(FIELD_SEPARATOR);
+        msgSb.append(genIp());
+        msgSb.append(FIELD_SEPARATOR);
         msgSb.append(genTraceId());
         msgSb.append(FIELD_SEPARATOR);
         msgSb.append(genMsgContent(msg));
@@ -34,7 +38,26 @@ public abstract class UnifyLogger {
     private static StringBuilder genMsgContent(String msg) {
         StringBuilder sb = new StringBuilder();
         sb.append(FIELD_BEGIN);
+        sb.append("CONTENT:");
         sb.append(msg);
+        sb.append(FIELD_END);
+        return sb;
+    }
+
+    private static StringBuilder genURI() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(FIELD_BEGIN);
+        sb.append("URI:");
+        sb.append(LogManager.getUri());
+        sb.append(FIELD_END);
+        return sb;
+    }
+
+    private static StringBuilder genIp() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(FIELD_BEGIN);
+        sb.append("IP:");
+        sb.append(LogManager.getIp());
         sb.append(FIELD_END);
         return sb;
     }
