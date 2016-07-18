@@ -23,7 +23,11 @@
 <div id="wrapper">
 
     <!-- Content -->
+    <div id="content" class="mobileUI-main-content">
+        <div id="content-inner">
 
+        </div>
+    </div>
 
     <!-- Sidebar -->
     <div id="sidebar">
