@@ -1,4 +1,4 @@
-package com.staryn.blog.controller;
+package com.staryn.blog.controller.velocity;
 
 import java.util.List;
 

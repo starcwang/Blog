@@ -19,6 +19,16 @@ public abstract class UnifyLogger {
         logger.info(logMsg);
     }
 
+    public static void warn(String logId, String msg) {
+        String logMsg = formatLogMsg(logId, msg);
+        logger.warn(logMsg);
+    }
+
+    public static void error(String logId, String msg) {
+        String logMsg = formatLogMsg(logId, msg);
+        logger.error(logMsg);
+    }
+
     private static String formatLogMsg(String logId, String msg) {
         StringBuilder msgSb = new StringBuilder();
         msgSb.append(genClassMsg());
