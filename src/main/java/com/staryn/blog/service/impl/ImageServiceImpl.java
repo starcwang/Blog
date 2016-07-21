@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
 import com.staryn.blog.common.exception.CommonException.AlarmType;
+import com.staryn.blog.model.vo.ImageUploadRes;
 import com.staryn.blog.service.ImageService;
 
 /**
@@ -27,11 +28,14 @@ public class ImageServiceImpl implements ImageService {
     private String imgSaveDir;
 
     @Override
-    public void upload(MultipartFile imageFile, HttpServletRequest request) throws IOException {
+    public ImageUploadRes upload(MultipartFile imageFile, HttpServletRequest request) throws IOException {
+        ImageUploadRes res = new ImageUploadRes();
         validate(imageFile);
         String fileName = RandomStringUtils.randomAlphabetic(32) + "." + FilenameUtils.getExtension(imageFile.getOriginalFilename());
         File file = new File(imgSaveDir + "/" + fileName);
         imageFile.transferTo(file);
+        res.setImgUrl(file.getAbsolutePath());
+        return res;
     }
 
     private void validate(MultipartFile imageFile) {

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.staryn.blog.model.CommonResponse;
+import com.staryn.blog.model.vo.ImageUploadRes;
 import com.staryn.blog.service.ImageService;
 
 /**
@@ -24,8 +25,8 @@ public class ImageController {
     @RequestMapping("/upload")
     @ResponseBody
     public Object upload(MultipartFile imgFile, HttpServletRequest request) throws Exception {
-        CommonResponse response = new CommonResponse();
-        imageService.upload(imgFile, request);
+        CommonResponse<ImageUploadRes> response = new CommonResponse<ImageUploadRes>();
+        response.setData(imageService.upload(imgFile, request));
         return response;
     }
 }
