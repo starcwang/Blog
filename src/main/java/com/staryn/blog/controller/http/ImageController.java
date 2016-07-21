@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,9 +23,9 @@ public class ImageController {
 
     @RequestMapping("/upload")
     @ResponseBody
-    public Object upload(@RequestParam("imgFile") MultipartFile file, HttpServletRequest request) throws Exception {
+    public Object upload(MultipartFile imgFile, HttpServletRequest request) throws Exception {
         CommonResponse response = new CommonResponse();
-        imageService.upload(file);
+        imageService.upload(imgFile, request);
         return response;
     }
 }

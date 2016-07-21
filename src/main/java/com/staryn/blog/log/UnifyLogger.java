@@ -1,9 +1,12 @@
 package com.staryn.blog.log;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 日志打印通用类
+ *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-14 16:19:00
  */
@@ -11,25 +14,33 @@ public abstract class UnifyLogger {
     private static final String FIELD_BEGIN = "[";
     private static final String FIELD_END = "]";
     private static final String FIELD_SEPARATOR = "######";
-    private static final String LOG_FILE_NAME = "systemlog";
+    private static final String LOG_FILE_NAME = "systemLog";
     private static final Logger logger = LoggerFactory.getLogger(LOG_FILE_NAME);
 
     public static void info(String logId, String msg) {
-        String logMsg = formatLogMsg(logId, msg);
+        String logMsg = formatLogMsg(logId, msg, null);
         logger.info(logMsg);
     }
 
     public static void warn(String logId, String msg) {
-        String logMsg = formatLogMsg(logId, msg);
+        warn(logId, msg, null);
+    }
+
+    public static void warn(String logId, String msg, Throwable throwable) {
+        String logMsg = formatLogMsg(logId, msg, throwable);
         logger.warn(logMsg);
     }
 
     public static void error(String logId, String msg) {
-        String logMsg = formatLogMsg(logId, msg);
+        error(logId, msg, null);
+    }
+
+    public static void error(String logId, String msg, Throwable throwable) {
+        String logMsg = formatLogMsg(logId, msg, throwable);
         logger.error(logMsg);
     }
 
-    private static String formatLogMsg(String logId, String msg) {
+    private static String formatLogMsg(String logId, String msg, Throwable throwable) {
         StringBuilder msgSb = new StringBuilder();
         msgSb.append(genClassMsg());
         msgSb.append(FIELD_SEPARATOR);
@@ -42,6 +53,10 @@ public abstract class UnifyLogger {
         msgSb.append(genTraceId());
         msgSb.append(FIELD_SEPARATOR);
         msgSb.append(genMsgContent(msg));
+        if (throwable != null) {
+            msgSb.append(FIELD_SEPARATOR);
+            msgSb.append(genThrowable(ExceptionUtils.getFullStackTrace(throwable)));
+        }
         return msgSb.toString();
     }
 
@@ -49,6 +64,15 @@ public abstract class UnifyLogger {
         StringBuilder sb = new StringBuilder();
         sb.append(FIELD_BEGIN);
         sb.append("CONTENT:");
+        sb.append(msg);
+        sb.append(FIELD_END);
+        return sb;
+    }
+
+    private static StringBuilder genThrowable(String msg) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(FIELD_BEGIN);
+        sb.append("THROWABLE:");
         sb.append(msg);
         sb.append(FIELD_END);
         return sb;

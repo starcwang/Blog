@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import javax.annotation.Resource;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
 import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
 
-import com.staryn.blog.common.exceptin.IllegalParamException;
+import com.staryn.blog.common.exception.IllegalParamException;
 import com.staryn.blog.log.UnifyLogger;
 import com.staryn.blog.service.validator.ValidatorService;
 
@@ -21,10 +19,8 @@ import com.staryn.blog.service.validator.ValidatorService;
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2015-11-17 19:43:00
  */
-@Service
 public class ValidatorServiceImpl implements ValidatorService {
 
-    @Resource
     private Validator validator;
 
     @Override

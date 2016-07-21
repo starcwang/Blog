@@ -26,7 +26,8 @@
     </select>
 
     <insert id="insertArticleReturnId" parameterType="com.staryn.blog.model.pojo.ArticleModel">
-       insert into article (title,author,summary,content,keywords) value (#{title}, #{author}, #{summary}, #{content}, #{keywords});
+        insert into article (title,author,summary,content,keywords) value (#{title}, #{author}, #{summary}, #{content},
+        #{keywords});
     </insert>
 
     <select id="selectAll" resultMap="BaseResultMap">

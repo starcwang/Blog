@@ -1,12 +1,21 @@
 package com.staryn.blog.model;
 
+import com.staryn.blog.common.enums.ErrorCode;
+
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-20 11:50:00
  */
 public class CommonResponse<T> {
-    private BStatus bStatus;
+    private BStatus bStatus = new BStatus();
     private T data;
+
+    public CommonResponse() {
+    }
+
+    public CommonResponse(BStatus bStatus) {
+        this.bStatus = bStatus;
+    }
 
     public BStatus getbStatus() {
         return bStatus;
@@ -25,14 +34,27 @@ public class CommonResponse<T> {
     }
 
     public static class BStatus {
-        private String code = "0";
-        private String desc = "成功";
+        private Integer code = ErrorCode.OK.getCode();
+        private String desc = ErrorCode.OK.getDesc();
 
-        public String getCode() {
+        public BStatus(Integer code, String desc) {
+            this.code = code;
+            this.desc = desc;
+        }
+
+        public BStatus(ErrorCode errorCode) {
+            this.code = errorCode.getCode();
+            this.desc = errorCode.getDesc();
+        }
+
+        public BStatus() {
+        }
+
+        public Integer getCode() {
             return code;
         }
 
-        public void setCode(String code) {
+        public void setCode(Integer code) {
             this.code = code;
         }
 

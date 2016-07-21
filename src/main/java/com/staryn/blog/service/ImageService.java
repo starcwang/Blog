@@ -1,5 +1,9 @@
 package com.staryn.blog.service;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -7,5 +11,5 @@ import org.springframework.web.multipart.MultipartFile;
  * @date 2016-07-20 11:45:00
  */
 public interface ImageService {
-    public void upload(MultipartFile file);
+    public void upload(MultipartFile imageFile, HttpServletRequest request) throws IOException;
 }

@@ -28,7 +28,7 @@ public abstract class LogManager {
     public static void setTraceId(String traceId, String uri, String ip) {
         uriHolder.set(uri);
         traceIdHolder.set(traceId);
-        ipHolder.set(traceId);
+        ipHolder.set(ip);
     }
 
     public static String getTraceId() {

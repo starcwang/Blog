@@ -16,6 +16,8 @@ import com.staryn.blog.log.UnifyLogger;
 import com.staryn.blog.util.JsonUtil;
 
 /**
+ * Controller层request和response日志记录切面层
+ *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-20 16:32:00
  */

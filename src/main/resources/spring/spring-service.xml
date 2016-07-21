@@ -8,4 +8,9 @@
 
     <bean id="validator" factory-bean="validationFactory" factory-method="getValidator"/>
 
+    <bean id="validatorService"
+          class="com.staryn.blog.service.validator.impl.ValidatorServiceImpl">
+        <property name="validator" ref="validator"/>
+    </bean>
+
 </beans>

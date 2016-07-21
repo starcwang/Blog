@@ -1,4 +1,4 @@
-package com.staryn.blog.common.exceptin;
+package com.staryn.blog.common.exception;
 
 /**
  * 参数校验异常

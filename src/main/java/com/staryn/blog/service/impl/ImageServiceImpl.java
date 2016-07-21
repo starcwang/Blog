@@ -1,9 +1,19 @@
 package com.staryn.blog.service.impl;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.staryn.blog.common.exceptin.CommonException;
+import com.staryn.blog.common.enums.ErrorCode;
+import com.staryn.blog.common.exception.CommonException;
+import com.staryn.blog.common.exception.CommonException.AlarmType;
 import com.staryn.blog.service.ImageService;
 
 /**
@@ -12,10 +22,24 @@ import com.staryn.blog.service.ImageService;
  */
 @Service
 public class ImageServiceImpl implements ImageService {
+
+    @Value("${photos.path.dir}")
+    private String imgSaveDir;
+
     @Override
-    public void upload(MultipartFile file) {
-        if (file.isEmpty()) {
-            throw new CommonException("传入文件为空！");
+    public void upload(MultipartFile imageFile, HttpServletRequest request) throws IOException {
+        validate(imageFile);
+        String fileName = RandomStringUtils.randomAlphabetic(32) + "." + FilenameUtils.getExtension(imageFile.getOriginalFilename());
+        File file = new File(imgSaveDir + "/" + fileName);
+        imageFile.transferTo(file);
+    }
+
+    private void validate(MultipartFile imageFile) {
+        if (imageFile == null || imageFile.isEmpty()) {
+            throw new CommonException(AlarmType.ERROR, ErrorCode.ERROR_PARAM, "传入文件为空！");
+        }
+        if (!imageFile.getContentType().equals("image/jpeg")) {
+            throw new CommonException(AlarmType.ERROR, ErrorCode.ERROR_PARAM, "传入图片格式不合法！");
         }
     }
 }
