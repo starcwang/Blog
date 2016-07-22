@@ -25,7 +25,7 @@
         from article where id=#{id};
     </select>
 
-    <insert id="insertArticleReturnId" parameterType="com.staryn.blog.model.pojo.ArticleModel">
+    <insert id="insertArticle" parameterType="com.staryn.blog.model.pojo.ArticleModel">
         insert into article (title,author,summary,content,keywords) value (#{title}, #{author}, #{summary}, #{content},
         #{keywords});
     </insert>

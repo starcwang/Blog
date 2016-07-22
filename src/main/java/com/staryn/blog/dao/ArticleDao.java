@@ -14,7 +14,7 @@ import com.staryn.blog.model.pojo.ArticleModel;
 public interface ArticleDao {
     ArticleModel selectById(int id);
 
-    void insertArticleReturnId(ArticleModel articleModel);
+    void insertArticle(ArticleModel articleModel);
 
     List<ArticleModel> selectAll();
 }
