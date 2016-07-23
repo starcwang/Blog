@@ -1,4 +1,4 @@
-package com.staryn.blog.log;
+package com.staryn.blog.manager;
 
 /**
  * 日志管理类

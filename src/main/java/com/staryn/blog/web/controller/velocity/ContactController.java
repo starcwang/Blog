@@ -1,4 +1,4 @@
-package com.staryn.blog.controller.velocity;
+package com.staryn.blog.web.controller.velocity;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,15 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
  * @date 2016-07-13 11:43:00
  */
 @Controller
-@RequestMapping(value = "/about")
-public class AboutController {
-
-    @RequestMapping("/info")
+@RequestMapping(value = "/contact")
+public class ContactController {
+    @RequestMapping("/our")
     @ResponseBody
-    public Object info() {
-
+    public Object our() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("about");
+        modelAndView.setViewName("contact");
         return modelAndView;
     }
 }

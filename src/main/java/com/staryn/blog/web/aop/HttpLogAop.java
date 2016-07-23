@@ -1,4 +1,4 @@
-package com.staryn.blog.common.aop;
+package com.staryn.blog.web.aop;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -11,8 +11,8 @@ import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.staryn.blog.log.LogManager;
-import com.staryn.blog.log.UnifyLogger;
+import com.staryn.blog.manager.LogManager;
+import com.staryn.blog.util.UnifyLogger;
 import com.staryn.blog.util.JsonUtil;
 
 /**

@@ -10,7 +10,7 @@ import org.apache.commons.lang.time.FastDateFormat;
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-12 19:20:00
  */
-public class DateUtil {
+public abstract class DateUtil {
 
     public static String getAbbreviationMonth(Date date) {
         return FastDateFormat.getInstance("MMM").format(date);

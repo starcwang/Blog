@@ -1,4 +1,4 @@
-package com.staryn.blog.controller.velocity;
+package com.staryn.blog.web.controller.velocity;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,16 +7,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-13 11:42:00
+ * @date 2016-07-13 11:43:00
  */
 @Controller
-@RequestMapping(value = "/gallery")
-public class GalleryController {
-    @RequestMapping("/list")
+@RequestMapping(value = "/about")
+public class AboutController {
+
+    @RequestMapping("/info")
     @ResponseBody
-    public Object list() {
+    public Object info() {
+
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("gallery");
+        modelAndView.setViewName("about");
         return modelAndView;
     }
 }

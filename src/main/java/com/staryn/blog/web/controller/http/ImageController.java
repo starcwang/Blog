@@ -1,4 +1,4 @@
-package com.staryn.blog.controller.http;
+package com.staryn.blog.web.controller.http;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

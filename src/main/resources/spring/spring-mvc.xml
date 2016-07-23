@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="com.staryn.blog.controller"/>
+    <context:component-scan base-package="com.staryn.blog.web.controller"/>
 
     <beans:bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <beans:property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
@@ -55,14 +55,14 @@
     </annotation-driven>
 
     <!-- 采用AOP记录controller异常 -->
-    <beans:bean id="controllerExceptionAop" class="com.staryn.blog.common.aop.ControllerExceptionAop"/>
+    <beans:bean id="controllerExceptionAop" class="com.staryn.blog.web.aop.ControllerExceptionAop"/>
     <aop:config>
         <aop:pointcut id="controllerExceptionCut" expression="within(@org.springframework.stereotype.Controller *)"/>
         <aop:advisor pointcut-ref="controllerExceptionCut" advice-ref="controllerExceptionAop"/>
     </aop:config>
 
     <!-- 采用AOP记录controller请求和返回日志 -->
-    <beans:bean id="httpLogAop" class="com.staryn.blog.common.aop.HttpLogAop"/>
+    <beans:bean id="httpLogAop" class="com.staryn.blog.web.aop.HttpLogAop"/>
     <aop:config>
         <aop:pointcut id="controllerHttpLogCut" expression="within(@org.springframework.stereotype.Controller *)"/>
         <aop:advisor pointcut-ref="controllerHttpLogCut" advice-ref="httpLogAop"/>

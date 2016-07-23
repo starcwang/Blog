@@ -10,7 +10,7 @@ import javax.validation.Validator;
 import org.apache.commons.lang.StringUtils;
 
 import com.staryn.blog.common.exception.IllegalParamException;
-import com.staryn.blog.log.UnifyLogger;
+import com.staryn.blog.util.UnifyLogger;
 import com.staryn.blog.service.validator.ValidatorService;
 
 /**

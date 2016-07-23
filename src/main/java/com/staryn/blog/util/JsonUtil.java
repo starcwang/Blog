@@ -14,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * json 工具类
+ *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-20 16:32:00
  */

@@ -1,4 +1,4 @@
-package com.staryn.blog.common.aop;
+package com.staryn.blog.web.aop;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -7,8 +7,8 @@ import org.apache.commons.lang.StringUtils;
 import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
 import com.staryn.blog.common.exception.IllegalParamException;
-import com.staryn.blog.log.LogManager;
-import com.staryn.blog.log.UnifyLogger;
+import com.staryn.blog.manager.LogManager;
+import com.staryn.blog.util.UnifyLogger;
 import com.staryn.blog.model.CommonResponse;
 import com.staryn.blog.model.CommonResponse.BStatus;
 

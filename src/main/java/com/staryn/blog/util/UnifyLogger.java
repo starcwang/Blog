@@ -1,8 +1,10 @@
-package com.staryn.blog.log;
+package com.staryn.blog.util;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.staryn.blog.manager.LogManager;
 
 /**
  * 日志打印通用类

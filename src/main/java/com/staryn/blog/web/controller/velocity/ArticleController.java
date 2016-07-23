@@ -1,4 +1,4 @@
-package com.staryn.blog.controller.velocity;
+package com.staryn.blog.web.controller.velocity;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.staryn.blog.log.UnifyLogger;
+import com.staryn.blog.util.UnifyLogger;
 import com.staryn.blog.model.ArticleContents;
 import com.staryn.blog.service.ArticleService;
 
