@@ -9,7 +9,8 @@ package com.staryn.blog.common.enums;
 public enum ErrorCode {
     OK(0, "成功"),
     ERROR(2, "系统错误"),
-    ERROR_PARAM(3, "参数错误"),;
+    ERROR_PARAM(3, "参数错误"),
+    ERROR_LOGIN(4, "登录失败"),;
 
     private int code;
     private String desc;

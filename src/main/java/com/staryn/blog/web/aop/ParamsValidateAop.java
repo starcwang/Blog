@@ -3,7 +3,11 @@ package com.staryn.blog.web.aop;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
+import javax.annotation.Resource;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.aopalliance.intercept.MethodInterceptor;
@@ -12,29 +16,31 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.staryn.blog.manager.LogManager;
-import com.staryn.blog.util.LoggerUtil;
+import com.staryn.blog.service.validator.ValidatorService;
 import com.staryn.blog.util.JsonUtil;
+import com.staryn.blog.util.LoggerUtil;
 
 /**
- * Controller层request和response日志记录切面层
+ * Controller层通用参数校验切面层
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-20 16:32:00
  */
-public class HttpLogAop implements MethodInterceptor {
+public class ParamsValidateAop implements MethodInterceptor {
+    @Resource
+    private ValidatorService validatorService;
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        String formattedURI = getFormattedRequestURI(request);
-        String logId = "http_" + formattedURI;
-        //记录请求信息
-        this.logRequest(logId, request);
-        Object response = invocation.proceed();
-        //记录返回信息
-        LoggerUtil.info(logId + "_response", "请求耗时：" + LogManager.getReqProcessTime() / 1000d + "s, http请求结果：" + JsonUtil.toJson(response));
-
-        return response;
+        Object result;
+        Object[] params = invocation.getArguments();
+        for (Object obj : params) {
+            if (!(obj instanceof ServletRequest) && !(obj instanceof ServletResponse)) {
+                validatorService.validator(obj);
+            }
+        }
+        result = invocation.proceed();
+        return result;
     }
 
     /**

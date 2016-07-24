@@ -68,6 +68,13 @@
         <aop:advisor pointcut-ref="controllerHttpLogCut" advice-ref="httpLogAop"/>
     </aop:config>
 
+    <!-- 采用AOP校验参数 -->
+    <beans:bean id="paramsValidateAop" class="com.staryn.blog.web.aop.ParamsValidateAop"/>
+    <aop:config>
+        <aop:pointcut id="controllerParamsValidateCut" expression="within(@org.springframework.stereotype.Controller *)"/>
+        <aop:advisor pointcut-ref="controllerParamsValidateCut" advice-ref="paramsValidateAop"/>
+    </aop:config>
+
     <!-- 上传文件拦截，设置最大上传文件大小   10M=10*1024*1024(B)=10485760 bytes -->
     <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <beans:property name="maxUploadSize" value="10485760"/>

@@ -12,7 +12,7 @@ import com.staryn.blog.manager.LogManager;
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
  * @date 2016-07-14 16:19:00
  */
-public abstract class UnifyLogger {
+public abstract class LoggerUtil {
     private static final String FIELD_BEGIN = "[";
     private static final String FIELD_END = "]";
     private static final String FIELD_SEPARATOR = "######";
@@ -124,7 +124,7 @@ public abstract class UnifyLogger {
         sb.append(FIELD_BEGIN);
         StackTraceElement[] stacks = new Throwable().getStackTrace();
         for (StackTraceElement ste : stacks) {
-            if (!UnifyLogger.class.getName().equals(ste.getClassName())) {
+            if (!LoggerUtil.class.getName().equals(ste.getClassName())) {
                 sb.append(ste.getClassName());
                 sb.append(".");
                 sb.append(ste.getMethodName());

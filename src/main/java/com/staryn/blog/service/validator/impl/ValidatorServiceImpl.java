@@ -10,7 +10,7 @@ import javax.validation.Validator;
 import org.apache.commons.lang.StringUtils;
 
 import com.staryn.blog.common.exception.IllegalParamException;
-import com.staryn.blog.util.UnifyLogger;
+import com.staryn.blog.util.LoggerUtil;
 import com.staryn.blog.service.validator.ValidatorService;
 
 /**
@@ -31,7 +31,7 @@ public class ValidatorServiceImpl implements ValidatorService {
             for (ConstraintViolation<T> item : constraintViolations) {
                 String msg = item.getPropertyPath().toString() + " " + item.getMessage();
                 errorMsgList.add(msg);
-                UnifyLogger.warn("validator_warn", msg);
+                LoggerUtil.warn("validator_warn", msg);
             }
             String errorMsg = StringUtils.join(errorMsgList, ",");
             throw new IllegalParamException("传入参数错误：" + errorMsg);
@@ -47,7 +47,7 @@ public class ValidatorServiceImpl implements ValidatorService {
             for (ConstraintViolation<T> item : constraintViolations) {
                 errorMessage = item.getPropertyPath().toString() + " " + item.getMessage();
                 errorMessages.add(errorMessage);
-                UnifyLogger.warn("validator_warn", errorMessage);
+                LoggerUtil.warn("validator_warn", errorMessage);
             }
         }
         return errorMessages;

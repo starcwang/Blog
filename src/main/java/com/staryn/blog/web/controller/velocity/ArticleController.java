@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.staryn.blog.util.UnifyLogger;
+import com.staryn.blog.util.LoggerUtil;
 import com.staryn.blog.model.ArticleContents;
 import com.staryn.blog.service.ArticleService;
 
@@ -26,7 +26,7 @@ public class ArticleController {
     @RequestMapping("/contents")
     @ResponseBody
     public Object contents() {
-        UnifyLogger.info("logIdddd", "messagessssss");
+        LoggerUtil.info("logIdddd", "messagessssss");
         ModelAndView modelAndView = new ModelAndView();
         List<ArticleContents> articleContentsList = articleService.getArticleContents();
         modelAndView.addObject("articleContentsList", articleContentsList);

@@ -8,7 +8,7 @@ import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
 import com.staryn.blog.common.exception.IllegalParamException;
 import com.staryn.blog.manager.LogManager;
-import com.staryn.blog.util.UnifyLogger;
+import com.staryn.blog.util.LoggerUtil;
 import com.staryn.blog.model.CommonResponse;
 import com.staryn.blog.model.CommonResponse.BStatus;
 
@@ -25,7 +25,7 @@ public class ControllerExceptionAop implements MethodInterceptor {
         try {
             result = invocation.proceed();
         } catch (IllegalParamException ipe) {
-            UnifyLogger.error(LogManager.getUri() + "_param_error", ipe.getMessage(), ipe);
+            LoggerUtil.error(LogManager.getUri() + "_param_error", ipe.getMessage(), ipe);
             CommonResponse commonResponse = new CommonResponse<>(new BStatus(ErrorCode.ERROR_PARAM));
             if (StringUtils.isNotBlank(ipe.getMessage())) {
                 commonResponse.getbStatus().setDesc(ipe.getMessage());
@@ -34,13 +34,13 @@ public class ControllerExceptionAop implements MethodInterceptor {
         } catch (CommonException ce) {
             switch (ce.getAlarmType()) {
                 case INFO:
-                    UnifyLogger.info(LogManager.getUri() + "_common_info", ce.getMessage());
+                    LoggerUtil.info(LogManager.getUri() + "_common_info", ce.getMessage());
                     break;
                 case WARN:
-                    UnifyLogger.warn(LogManager.getUri() + "_common_warn", ce.getMessage(), ce);
+                    LoggerUtil.warn(LogManager.getUri() + "_common_warn", ce.getMessage(), ce);
                     break;
                 case ERROR:
-                    UnifyLogger.error(LogManager.getUri() + "_common_error", ce.getMessage(), ce);
+                    LoggerUtil.error(LogManager.getUri() + "_common_error", ce.getMessage(), ce);
                     break;
                 default:
                     break;
@@ -51,7 +51,7 @@ public class ControllerExceptionAop implements MethodInterceptor {
             }
             result = commonResponse;
         } catch (Exception e) {
-            UnifyLogger.error(LogManager.getUri() + "_unknown_error", e.getMessage(), e);
+            LoggerUtil.error(LogManager.getUri() + "_unknown_error", e.getMessage(), e);
             result = new CommonResponse<>(new BStatus(ErrorCode.ERROR));
         }
         return result;

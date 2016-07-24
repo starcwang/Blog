@@ -26,7 +26,7 @@ public abstract class MD5Util {
             MessageDigest md = MessageDigest.getInstance("MD5");
             result = byteArray2HexStr(md.digest(sourceString.getBytes()));
         } catch (Exception e) {
-            UnifyLogger.error("md5_error", "生成md5字符出错！str=" + sourceString);
+            LoggerUtil.error("md5_error", "生成md5字符出错！str=" + sourceString);
             throw new RuntimeException("生成md5字符出错！str=" + sourceString);
         }
         return result;
