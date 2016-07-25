@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.staryn.blog.model.vo.LoginReq;
 import com.staryn.blog.model.vo.LoginRes;
+import com.staryn.blog.model.vo.LogoutRes;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
@@ -12,4 +13,5 @@ import com.staryn.blog.model.vo.LoginRes;
  */
 public interface LoginService {
     public LoginRes login(LoginReq loginReq, HttpServletRequest request, HttpServletResponse response);
+    public LogoutRes logout(HttpServletRequest request, HttpServletResponse response);
 }

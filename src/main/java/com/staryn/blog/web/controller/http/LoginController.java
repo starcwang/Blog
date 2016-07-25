@@ -12,6 +12,7 @@ import com.staryn.blog.model.CommonResponse;
 import com.staryn.blog.model.vo.ImageUploadRes;
 import com.staryn.blog.model.vo.LoginReq;
 import com.staryn.blog.model.vo.LoginRes;
+import com.staryn.blog.model.vo.LogoutRes;
 import com.staryn.blog.service.LoginService;
 
 /**
@@ -31,6 +32,15 @@ public class LoginController {
         CommonResponse<LoginRes> commonResponse = new CommonResponse<LoginRes>();
         LoginRes loginRes = loginService.login(loginReq, request, response);
         commonResponse.setData(loginRes);
+        return commonResponse;
+    }
+
+    @RequestMapping("/logout")
+    @ResponseBody
+    public Object logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        CommonResponse<LogoutRes> commonResponse = new CommonResponse<LogoutRes>();
+        LogoutRes logoutRes = loginService.logout(request, response);
+        commonResponse.setData(logoutRes);
         return commonResponse;
     }
 }
