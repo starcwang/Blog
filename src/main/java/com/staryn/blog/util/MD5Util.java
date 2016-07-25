@@ -56,8 +56,4 @@ public abstract class MD5Util {
         hexStr = Integer.toHexString(n / 16) + Integer.toHexString(n % 16);
         return hexStr.toUpperCase();
     }
-
-    public static void main(String[] args) {
-        System.out.println(MD5Util.getMD5Str("123"));
-    }
 }
