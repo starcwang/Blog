@@ -37,11 +37,6 @@ public class CommonResponse<T> {
         private Integer code = ErrorCode.OK.getCode();
         private String desc = ErrorCode.OK.getDesc();
 
-        public BStatus(Integer code, String desc) {
-            this.code = code;
-            this.desc = desc;
-        }
-
         public BStatus(ErrorCode errorCode) {
             this.code = errorCode.getCode();
             this.desc = errorCode.getDesc();
