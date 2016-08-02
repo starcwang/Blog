@@ -1,11 +1,16 @@
 package com.staryn.blog.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.staryn.blog.model.pojo.ArticleModel;
+import com.staryn.blog.util.JsonUtil;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
@@ -19,7 +24,10 @@ public class ArticleDaoTest {
 
     @Test
     public void selectAll() throws Exception {
-        articleDao.selectAll();
+        List<ArticleModel> articleModels = articleDao.selectAll();
+        for (ArticleModel articleModel : articleModels) {
+            System.out.println(JsonUtil.toJson(articleModel));
+        }
     }
 
 }

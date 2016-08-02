@@ -2,31 +2,19 @@ drop table if exists `article`;
 
 create table `article` (
   `id`          int(11)       not null auto_increment,
-  `title`       varchar(500)  not null default ''
-  comment '标题',
-  `author`      varchar(200)  not null default ''
-  comment '作者',
-  `summary`     varchar(3000) not null default ''
-  comment '摘要',
-  `content`     text          not null
-  comment '内容',
-  `keywords`    varchar(500)  not null
-  comment '关键字',
-  `like_num`    int(10)       not null default 0
-  comment '喜欢数',
-  `comment_num` int(10)       not null default 0
-  comment '评论数',
-  `create_time` timestamp     not null default CURRENT_TIMESTAMP
-  comment '创建时间',
-  `update_time` timestamp     not null default CURRENT_TIMESTAMP
-  comment '更新时间',
+  `title`       varchar(500)  not null default ''  comment '标题',
+  `author`      varchar(200)  not null default ''  comment '作者',
+  `summary`     varchar(3000) not null default ''  comment '摘要',
+  `content`     text          not null  comment '内容',
+  `keywords`    varchar(500)  not null  comment '关键字',
+  `like_num`    int(10)       not null default 0  comment '喜欢数',
+  `comment_num` int(10)       not null default 0  comment '评论数',
+  `create_time` timestamp     not null default CURRENT_TIMESTAMP  comment '创建时间',
+  `update_time` timestamp     not null default CURRENT_TIMESTAMP  comment '更新时间',
   primary key (`id`),
   unique key `uniq_id` (`id`),
   index `index_title`(`title`)
-)
-  engine = InnoDB
-  default charset = utf8mb4
-  comment = '文章信息表';
+)  engine = InnoDB  default charset = utf8mb4  comment = '文章信息表';
 
 insert into `article` values ('1', 'java反射：根据给定类名实例化类并调用其方法', '王超',
                               '实习期间遇到一个题，题目大致是从一个文件中读取内容，文件格式如下：类名:属性名=值,属性名=值……。有若干行这样的数据，要求根据文件内容实例化类并且为其属性赋值，最后调用该类方法，输出类的各属性。 ',
@@ -39,3 +27,29 @@ insert into `article` values
 insert into `article` values ('3', '使用java读取url网络文件', '王超', '使用java读取url文件',
                               '使用java读取url文件\r\n\r\n使用简单的url方法读取网络中的文件，代码如下，一看便知：\r\n\r\n[java] view plain copy\r\nimport java.io.BufferedReader;  \r\nimport java.io.IOException;  \r\nimport java.io.InputStreamReader;  \r\nimport java.net.URL;  \r\n  \r\n/** \r\n * @author: wangchao.wang \r\n * @date: 2015-07-22 14:47:00 \r\n */  \r\npublic class Test {  \r\n    private static final String URL = \"www.baidu.com\";  \r\n  \r\n    public static void main(String[] args) throws IOException {  \r\n        URL url = new URL(URL);  \r\n        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));  \r\n        String s;  \r\n        while ((s = reader.readLine()) != null) {  \r\n            System.out.println(s);  \r\n        }  \r\n        reader.close();  \r\n    }  \r\n}  \r\n记在博客中方便查看。',
                               'java,网络', '69', '0', '2016-07-12 17:12:36', '2016-07-12 17:12:36');
+
+drop table if exists `admin`;
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(500) NOT NULL DEFAULT '' COMMENT '用户名',
+  `password` varchar(500) NOT NULL DEFAULT '' COMMENT '加密后密码',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_id` (`id`),
+  KEY `index_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='管理员信息表';
+
+drop table if exists `image`;
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(500) NOT NULL DEFAULT '' COMMENT '标题',
+  `url` varchar(500) NOT NULL DEFAULT '' COMMENT '地址',
+  `like_num` int(10) NOT NULL DEFAULT '0' COMMENT '喜欢数',
+  `comment_num` int(10) NOT NULL DEFAULT '0' COMMENT '评论数',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_id` (`id`),
+  KEY `index_title` (`title`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='图片信息表';
