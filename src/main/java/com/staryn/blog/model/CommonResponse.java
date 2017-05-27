@@ -4,7 +4,7 @@ import com.staryn.blog.common.enums.ErrorCode;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-20 11:50:00
+ * @since 2016-07-20 11:50:00
  */
 public class CommonResponse<T> {
     private BStatus bStatus = new BStatus();

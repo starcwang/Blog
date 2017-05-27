@@ -6,7 +6,7 @@ import java.util.Date;
  * 文章目录对象
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-12 15:29:00
+ * @since 2016-07-12 15:29:00
  */
 public class ArticleContents {
     private int id;

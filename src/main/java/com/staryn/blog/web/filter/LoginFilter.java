@@ -1,6 +1,13 @@
 package com.staryn.blog.web.filter;
 
-import java.io.IOException;
+import com.staryn.blog.common.consts.LoginConst;
+import com.staryn.blog.manager.LoginManager;
+import com.staryn.blog.service.LoginService;
+import com.staryn.blog.service.encrypt.EncryptService;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -9,22 +16,13 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.springframework.web.filter.GenericFilterBean;
-
-import com.staryn.blog.common.consts.LoginConst;
-import com.staryn.blog.manager.LoginManager;
-import com.staryn.blog.service.LoginService;
-import com.staryn.blog.service.encrypt.EncryptService;
+import java.io.IOException;
 
 /**
  * 登录过滤器
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-13 20:58:00
+ * @since 2016-07-13 20:58:00
  */
 public class LoginFilter extends GenericFilterBean {
     private EncryptService encryptService;

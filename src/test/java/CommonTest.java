@@ -1,12 +1,11 @@
-import java.util.Date;
-
+import com.staryn.blog.util.DateUtil;
 import org.junit.Test;
 
-import com.staryn.blog.util.DateUtil;
+import java.util.Date;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-25 12:51:00
+ * @since 2016-07-25 12:51:00
  */
 public class CommonTest {
 

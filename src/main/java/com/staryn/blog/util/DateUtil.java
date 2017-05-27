@@ -1,16 +1,16 @@
 package com.staryn.blog.util;
 
-import java.util.Date;
-
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.commons.lang.time.FastDateFormat;
+
+import java.util.Date;
 
 /**
  * 日期格式化工具类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-12 19:20:00
+ * @since 2016-07-12 19:20:00
  */
 public abstract class DateUtil {
 

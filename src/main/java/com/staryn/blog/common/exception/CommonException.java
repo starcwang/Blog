@@ -6,7 +6,7 @@ import com.staryn.blog.common.enums.ErrorCode;
  * 通用异常
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-20 16:32:00
+ * @since 2016-07-20 16:32:00
  */
 public class CommonException extends RuntimeException {
     private static final long serialVersionUID = -2604071107484564575L;

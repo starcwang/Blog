@@ -1,17 +1,5 @@
 package com.staryn.blog.service.impl;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang.RandomStringUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
 import com.staryn.blog.common.exception.CommonException.AlarmType;
@@ -19,10 +7,20 @@ import com.staryn.blog.dao.ImageDao;
 import com.staryn.blog.model.pojo.ImageModel;
 import com.staryn.blog.model.vo.ImageUploadRes;
 import com.staryn.blog.service.ImageService;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-20 11:45:00
+ * @since 2016-07-20 11:45:00
  */
 @Service
 public class ImageServiceImpl implements ImageService {

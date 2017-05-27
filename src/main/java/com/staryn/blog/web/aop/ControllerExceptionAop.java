@@ -1,22 +1,21 @@
 package com.staryn.blog.web.aop;
 
-import org.aopalliance.intercept.MethodInterceptor;
-import org.aopalliance.intercept.MethodInvocation;
-import org.apache.commons.lang.StringUtils;
-
 import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
 import com.staryn.blog.common.exception.IllegalParamException;
 import com.staryn.blog.manager.LogManager;
-import com.staryn.blog.util.LoggerUtil;
 import com.staryn.blog.model.CommonResponse;
 import com.staryn.blog.model.CommonResponse.BStatus;
+import com.staryn.blog.util.LoggerUtil;
+import org.aopalliance.intercept.MethodInterceptor;
+import org.aopalliance.intercept.MethodInvocation;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Controller层异常切面
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-20 16:32:00
+ * @since 2016-07-20 16:32:00
  */
 public class ControllerExceptionAop implements MethodInterceptor {
     @Override

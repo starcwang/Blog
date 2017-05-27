@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-04 16:37:00
+ * @since 2016-07-04 16:37:00
  */
 public class AdminModel {
     private int id;

@@ -6,7 +6,7 @@ import java.util.List;
  * 参数校验服务
  *
  * @author wangchao.wang
- * @date 2015-11-17 19:42:00
+ * @since 2015-11-17 19:42:00
  */
 public interface ValidatorService {
     /**

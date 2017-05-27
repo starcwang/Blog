@@ -6,7 +6,7 @@ import org.apache.commons.lang.StringUtils;
  * 用户登录状态管理类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-23 00:55:00
+ * @since 2016-07-23 00:55:00
  */
 public abstract class LoginManager {
     private static final ThreadLocal<String> usernameHolder = new ThreadLocal<>();

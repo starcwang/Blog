@@ -1,12 +1,5 @@
 package com.staryn.blog.service.impl;
 
-import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.stereotype.Service;
-
 import com.staryn.blog.common.consts.LoginConst;
 import com.staryn.blog.common.enums.ErrorCode;
 import com.staryn.blog.common.exception.CommonException;
@@ -19,10 +12,16 @@ import com.staryn.blog.model.vo.LogoutRes;
 import com.staryn.blog.service.LoginService;
 import com.staryn.blog.service.encrypt.EncryptService;
 import com.staryn.blog.util.MD5Util;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-24 18:37:00
+ * @since 2016-07-24 18:37:00
  */
 @Service
 public class LoginServiceImpl implements LoginService {

@@ -1,10 +1,5 @@
 package com.staryn.blog.util;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.List;
-
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
@@ -13,11 +8,16 @@ import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * json 工具类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-20 16:32:00
+ * @since 2016-07-20 16:32:00
  */
 public abstract class JsonUtil {
     private static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);

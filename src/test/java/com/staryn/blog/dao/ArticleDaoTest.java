@@ -1,20 +1,18 @@
 package com.staryn.blog.dao;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
+import com.staryn.blog.model.pojo.ArticleModel;
+import com.staryn.blog.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.staryn.blog.model.pojo.ArticleModel;
-import com.staryn.blog.util.JsonUtil;
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-08 17:46:00
+ * @since 2016-07-08 17:46:00
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/spring.xml")

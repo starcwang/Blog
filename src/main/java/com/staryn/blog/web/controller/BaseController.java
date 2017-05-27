@@ -1,17 +1,16 @@
 package com.staryn.blog.web.controller;
 
-import java.util.List;
-
+import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.common.collect.Lists;
+import java.util.List;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-04-22 18:17:00
+ * @since 2016-04-22 18:17:00
  */
 @Controller
 @RequestMapping(value = "/star/blog")

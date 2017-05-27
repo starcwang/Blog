@@ -4,7 +4,7 @@ package com.staryn.blog.common.enums;
  * 错误码
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-21 20:10:00
+ * @since 2016-07-21 20:10:00
  */
 public enum ErrorCode {
     OK(0, "成功"),

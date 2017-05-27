@@ -1,16 +1,15 @@
 package com.staryn.blog.util;
 
+import com.staryn.blog.manager.LogManager;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.staryn.blog.manager.LogManager;
 
 /**
  * 日志打印通用类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-14 16:19:00
+ * @since 2016-07-14 16:19:00
  */
 public abstract class LoggerUtil {
     private static final String FIELD_BEGIN = "[";

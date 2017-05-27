@@ -6,7 +6,7 @@ import java.security.MessageDigest;
  * MD5 加密工具类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-22 16:07:00
+ * @since 2016-07-22 16:07:00
  * @see MessageDigest
  */
 public abstract class MD5Util {

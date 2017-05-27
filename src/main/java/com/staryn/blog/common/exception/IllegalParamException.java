@@ -4,7 +4,7 @@ package com.staryn.blog.common.exception;
  * 参数校验异常
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2015-11-17 19:59:00
+ * @since 2015-11-17 19:59:00
  * @see RuntimeException
  */
 public class IllegalParamException extends RuntimeException {

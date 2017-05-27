@@ -4,7 +4,7 @@ package com.staryn.blog.manager;
  * 日志管理类
  *
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-13 21:12:00
+ * @since 2016-07-13 21:12:00
  */
 public abstract class LogManager {
     private static final String DEFAULT_TRACE_ID = "0";

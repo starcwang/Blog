@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-13 11:43:00
+ * @since 2016-07-13 11:43:00
  */
 @Controller
 @RequestMapping(value = "/contact")

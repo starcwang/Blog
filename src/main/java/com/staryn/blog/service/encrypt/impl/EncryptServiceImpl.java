@@ -1,19 +1,18 @@
 package com.staryn.blog.service.encrypt.impl;
 
-import javax.annotation.Resource;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import com.staryn.blog.dao.AdminDao;
 import com.staryn.blog.model.pojo.AdminModel;
 import com.staryn.blog.service.encrypt.EncryptService;
 import com.staryn.blog.util.MD5Util;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author <a href="mailto:wangchao.star@gmail.com">wangchao</a>
- * @date 2016-07-24 19:15:00
+ * @since 2016-07-24 19:15:00
  */
 @Service
 public class EncryptServiceImpl implements EncryptService {
